@@ -2,7 +2,7 @@
 GET http://127.0.0.1:9200/
 
 ### 创建Elasticsearch的索引
-PUT http://127.0.0.1:9200/es3
+PUT http://127.0.0.1:9200/es
 
 ### 查询Elasticsearch中的es索引
 GET http://127.0.0.1:9200/_cat/indices?v
@@ -21,3 +21,18 @@ POST http://127.0.0.1:9200/es/_close
 
 ### 开启Elasticsearch中的es索引
 POST http://127.0.0.1:9200/es/_open
+
+### 查询映射
+GET http://127.0.0.1:9200/es/_mapping
+
+### 创建映射
+PUT http://127.0.0.1:9200/es/_mapping
+Content-Type: application/json
+
+{
+  "properties": {
+    "phone": {
+      "type": "integer"
+    }
+  }
+}
